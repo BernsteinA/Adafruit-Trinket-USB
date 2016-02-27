@@ -52,7 +52,7 @@ def main(argv):
         print 'TrinketFakeUsbSerialHostSW Python Edition'
         print 'port is ', port
 
-    ser = serial.Serial(port)
+    ser = serial.Serial(port, dsrdtr=True, rtscts=True)
     if verbose and port != ser.portstr:
         print 'port actually is ', ser.portstr
 
